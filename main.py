@@ -2,7 +2,6 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from bs4 import BeautifulSoup
-from pprint import pprint
 
 TOKEN = 'TOKEN'
 PLAYER_URL = 'https://kirlovon.dev/Kinopoisk-Watch/?id='
