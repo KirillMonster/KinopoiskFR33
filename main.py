@@ -4,13 +4,13 @@ import requests
 from bs4 import BeautifulSoup
 from pprint import pprint
 
-TOKEN = '5443250225:AAEw5NRKONieff5P1yDNpykmTFpqjeuBcM4'
+TOKEN = 'TOKEN'
 PLAYER_URL = 'https://kirlovon.dev/Kinopoisk-Watch/?id='
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
 
-HEADERS = {'User-Agent': 'Mozilla/5.0 (Windows NT 10.0; Win64; x64; rv:104.0) Gecko/20100101 Firefox/104.0'}
+HEADERS = {'User-Agent': 'Your User Agent'}
 
 
 async def kinopoisk(message: types.Message):
