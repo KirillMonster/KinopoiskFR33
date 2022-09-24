@@ -12,7 +12,8 @@ dp = Dispatcher(bot)
 HEADERS = {'User-Agent': 'Your User Agent'}
 
 
-async def kinopoisk(message: types.Message):
+@dp.message_handler(commands=['start'])
+async def start(message: types.Message):
     await bot.send_message(message.chat.id, f'''
 👋 Привет, {message.from_user.mention}
 🆓 Это бесплатный Kinopoisk
@@ -26,15 +27,6 @@ async def kinopoisk(message: types.Message):
 
 👨‍💻 Разработчик - /coder''')
 
-
-@dp.message_handler(commands=['start'])
-async def start(message: types.Message):
-    await kinopoisk(message)
-
-
-@dp.message_handler(commands=['kinopoisk'])
-async def kinopoisk_(message: types.Message):
-    await kinopoisk(message)
 
 @dp.message_handler(commands=['kino'])
 async def kino(message: types.Message):
