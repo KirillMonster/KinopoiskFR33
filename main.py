@@ -46,7 +46,7 @@ async def kino(message: types.Message):
         film_id = text.replace('https://www.kinopoisk.ru/film/', '').replace('/', '')
         keyboard.add(InlineKeyboardButton('👁‍🗨 Смотреть', url=SHORT_URL + PLAYER_URL + film_id))
         return await bot.send_message(message.chat.id,
-                               f'🍿 Готовь попкорн!\n🎥 Я нашёл для тебя фильм:', reply_markup=keyboard)
+                               f'🍿 Готовь попкорн!\n🎥 Держи фильм:', reply_markup=keyboard)
 
     response = requests.get(f'https://www.kinopoisk.ru/index.php?kp_query={text}', headers=HEADERS)
     soup = BeautifulSoup(response.text, 'lxml')
