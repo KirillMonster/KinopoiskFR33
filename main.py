@@ -36,7 +36,7 @@ async def kino(message: types.Message):
         return await bot.send_message(message.chat.id, '🎥 Укажите название или ссылку на фильм')
     if text.startswith('https://www.kinopoisk.ru/film/'):
         film_id = text.replace('https://www.kinopoisk.ru/film/', '').replace('/', '')
-        keyboard.add(InlineKeyboardButton('👁‍🗨 Смотреть', url=SHORT_URL + PLAYER_URL + film_id))
+        keyboard.add(InlineKeyboardButton('👁‍🗨 Смотреть', url=PLAYER_URL + film_id))
         return await bot.send_message(message.chat.id,
                                f'🍿 Готовь попкорн!\n🎥 Держи фильм:', reply_markup=keyboard)
 
@@ -71,7 +71,7 @@ async def kino(message: types.Message):
             film = film.find('p', class_='name')
             film_name = film.find('a').get_text(strip=True)
             film_id = film.find('a').get('data-id')
-            keyboard.add(InlineKeyboardButton(text=f'{film_name} | {film_rating}⭐', url=SHORT_URL + PLAYER_URL + film_id))
+            keyboard.add(InlineKeyboardButton(text=f'{film_name} | {film_rating}⭐', url=PLAYER_URL + film_id))
 
     await bot.send_message(message.chat.id, f'🍿 Готовь попкорн!\n🎥 Я нашёл для тебя фильм{"ы" if count > 1 else ""}:', reply_markup=keyboard)
 
