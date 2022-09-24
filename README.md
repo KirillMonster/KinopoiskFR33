@@ -16,4 +16,4 @@ Open the console and enter the command - python main.py
 <br />RU:
 Откройте консоль и введите команду - python main.py
 
-# Enjoy watching!
+# Enjoy watching! | Приятного просмотра!
