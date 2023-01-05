@@ -83,7 +83,9 @@ async def donate(message: types.Message):
 @dp.message_handler(commands=['coder'])
 async def coder(message: types.Message):
     await bot.send_message(message.chat.id, '''👨‍💻 Кодер этого бота - @Kirill_Monster
-📋 И его проекты не забудь посмотреть - @kirill_monster_projects''')
+📋 И его проекты не забудь посмотреть:
+TG - @kirill_monster_projects
+GitHub - https://github.com/KirillMonster''')
 
 if __name__ == '__main__':
     executor.start_polling(dp, skip_updates=True)
