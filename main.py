@@ -2,9 +2,10 @@ from aiogram import Bot, Dispatcher, executor, types
 from aiogram.types import InlineKeyboardButton, InlineKeyboardMarkup
 import requests
 from bs4 import BeautifulSoup
+from fake_useragent import UserAgent
 
 TOKEN = 'TOKEN'
-PLAYER_URL = 'https://kirlovon.dev/Kinopoisk-Watch/?id='
+PLAYER_URL = 'https://4h0y.gitlab.io/#'  # 'https://kirlovon.dev/Kinopoisk-Watch/?id='
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher(bot)
@@ -40,7 +41,8 @@ async def kino(message: types.Message):
         return await bot.send_message(message.chat.id,
                                f'🍿 Готовь попкорн!\n🎥 Держи фильм:', reply_markup=keyboard)
 
-    response = requests.get(f'https://www.kinopoisk.ru/index.php?kp_query={text}', headers=HEADERS)
+    response = requests.get(f'https://www.kinopoisk.ru/index.php?kp_query={text}', headers={
+        'User-Agent': UserAgent().random})
     soup = BeautifulSoup(response.text, 'lxml')
 
     count = 0
