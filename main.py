@@ -78,7 +78,7 @@ async def kino(message: types.Message):
 
 @dp.message_handler(commands=['donate'])
 async def donate(message: types.Message):
-    await bot.send_message(message.chat.id, '💳 Карта Тинькофф - 5536 9177 4607 9380 (Кирилл. И)')
+    await bot.send_message(message.chat.id, '💳 Карта Тинькофф - 2200 7004 6754 1347 (Кирилл. И)')
 
 @dp.message_handler(commands=['coder'])
 async def coder(message: types.Message):
